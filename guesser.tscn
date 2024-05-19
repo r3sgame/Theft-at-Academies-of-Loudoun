@@ -1,0 +1,143 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7y7pulyxoreu"]
+
+[ext_resource type="Script" path="res://Scripts/guesser.gd" id="1_7u36q"]
+[ext_resource type="Texture2D" uid="uid://crqhq32aurjhp" path="res://endscene1.png" id="1_lkdcr"]
+[ext_resource type="AudioStream" uid="uid://doam6ivmpk8kl" path="res://Audio/Victory.mp3" id="3_7inqt"]
+
+[node name="Guesser" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7u36q")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = -216.0
+offset_right = 384.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lkdcr")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = -202.0
+offset_right = -40.0
+offset_bottom = -110.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Mr. Allshouse"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = -93.0
+offset_right = -40.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Dr. Crowe"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = 16.0
+offset_right = -40.0
+offset_bottom = 108.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Dr. Chapin"
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = 125.0
+offset_right = -40.0
+offset_bottom = 217.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Mr. Writer"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+offset_left = 23.0
+offset_top = 19.0
+offset_right = 297.0
+offset_bottom = 89.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Great Job!"
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 102.0
+offset_right = 572.0
+offset_bottom = 482.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 1
+offset_left = 23.0
+offset_top = 105.0
+offset_right = 568.0
+offset_bottom = 609.0
+theme_override_font_sizes/normal_font_size = 25
+text = "You defeated all four suspects and can now determine the true culprit. Below are the clues you have collected:
+
+1) The culprit is an AET teacher. 
+2) The culprit has glasses.
+3) The culprit is NOT retired.
+4) The culprit is a research mentor.
+
+Choose wisely."
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7inqt")
+volume_db = 8.914
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_success"]
+[connection signal="pressed" from="Button2" to="." method="_on_failure"]
+[connection signal="pressed" from="Button3" to="." method="_on_failure"]
+[connection signal="pressed" from="Button4" to="." method="_on_failure"]

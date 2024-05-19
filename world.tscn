@@ -1,0 +1,657 @@
+[gd_scene load_steps=37 format=3 uid="uid://bqwsa25dhrv5i"]
+
+[ext_resource type="PackedScene" uid="uid://b4u6bkvitddcp" path="res://School.glb" id="1_7xxw0"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="2_umwxj"]
+[ext_resource type="Material" uid="uid://1x23vpqph0y7" path="res://Materials/floor.tres" id="3_i5slm"]
+[ext_resource type="AudioStream" uid="uid://dwc8bln5phj42" path="res://Audio/Meteor_-_Fightertown.mp3" id="3_nth28"]
+[ext_resource type="PackedScene" uid="uid://6b267o66nmj4" path="res://addons/kaykit_furniture_bits/Assets/gltf/table_medium.gltf" id="4_h2wqj"]
+[ext_resource type="PackedScene" uid="uid://b81u4mvagfdap" path="res://addons/kaykit_furniture_bits/Assets/gltf/chair_A.gltf" id="5_18v1q"]
+[ext_resource type="PackedScene" uid="uid://dio2t4rjhws6y" path="res://addons/kaykit_furniture_bits/Assets/gltf/pictureframe_large_A.gltf" id="6_hl7ea"]
+[ext_resource type="PackedScene" uid="uid://b7itix0ufgleu" path="res://addons/kaykit_furniture_bits/Assets/gltf/chair_stool_wood.gltf" id="7_rhxxd"]
+[ext_resource type="Script" path="res://Scripts/Teacher.gd" id="8_5lq3l"]
+[ext_resource type="Texture2D" uid="uid://dqhyjj31blqn0" path="res://Textures/allshouse.png" id="8_ypkae"]
+[ext_resource type="Texture2D" uid="uid://de81yxqf0y2k5" path="res://Textures/writer.png" id="9_u7pj1"]
+[ext_resource type="Texture2D" uid="uid://5uqr2ojgfmf3" path="res://Textures/crowe.png" id="10_u7c0v"]
+[ext_resource type="Texture2D" uid="uid://dmjcl8y8qylp2" path="res://Textures/chapin.png" id="11_ncg4o"]
+[ext_resource type="Texture2D" uid="uid://bbjc54bmpv3f8" path="res://addons/controller_icons/assets/key/arrow_right.png" id="14_03bek"]
+[ext_resource type="Script" path="res://Scripts/Powerup.gd" id="14_oawwm"]
+[ext_resource type="Texture2D" uid="uid://cge2w6yy0r2cx" path="res://addons/controller_icons/assets/key/arrow_down.png" id="15_h2kdf"]
+[ext_resource type="PackedScene" uid="uid://buk0vovkxfceu" path="res://addons/kaykit_furniture_bits/Assets/gltf/book_single.gltf" id="15_v04le"]
+[ext_resource type="Texture2D" uid="uid://puc614rf26im" path="res://addons/controller_icons/assets/key/arrow_left.png" id="16_xlqsp"]
+[ext_resource type="Texture2D" uid="uid://d04bqc5v3befo" path="res://addons/controller_icons/assets/key/arrow_up.png" id="17_wybl6"]
+[ext_resource type="Texture2D" uid="uid://cshl1x6xb2i3v" path="res://Textures/image.png" id="20_1mgcr"]
+[ext_resource type="Texture2D" uid="uid://b8y7u2fsp3c1s" path="res://Textures/image5.png" id="21_j4tqq"]
+[ext_resource type="Texture2D" uid="uid://cdojuy4hbc8j6" path="res://Textures/image6.png" id="22_wwho4"]
+[ext_resource type="Texture2D" uid="uid://dbhhofu4djlqb" path="res://Textures/image2.png" id="23_44buy"]
+[ext_resource type="Texture2D" uid="uid://d14f5e4b0t4ht" path="res://Textures/image3.png" id="24_kvj0m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hd8ya"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ky7b3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_py538"]
+sky_top_color = Color(0.145098, 0.180392, 0.227451, 1)
+sky_horizon_color = Color(0.207843, 0.211765, 0.223529, 1)
+sky_cover_modulate = Color(0.168627, 0.168627, 0.168627, 1)
+ground_bottom_color = Color(0.0901961, 0.0745098, 0.0509804, 1)
+ground_horizon_color = Color(0.176471, 0.180392, 0.188235, 1)
+
+[sub_resource type="Sky" id="Sky_2bx7u"]
+sky_material = SubResource("ProceduralSkyMaterial_py538")
+
+[sub_resource type="Environment" id="Environment_wnrbx"]
+background_mode = 2
+background_energy_multiplier = 7.4
+sky = SubResource("Sky_2bx7u")
+ambient_light_color = Color(1, 1, 1, 1)
+glow_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a5c48"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_odyg5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_20grp"]
+size = Vector3(97.7238, 27.8949, 173.201)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wp4qc"]
+size = Vector3(319.868, 70.656, 155.366)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nten7"]
+size = Vector2(3000, 3000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dolen"]
+size = Vector3(90.3867, 14.8732, 18.2965)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iocuc"]
+size = Vector3(10.0908, 1, 3.90723)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="School" parent="." instance=ExtResource("1_7xxw0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0724, -5.32613, -41.0986)
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 15.3923, -9.57549, -29.7234)
+script = ExtResource("2_umwxj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+material_override = SubResource("StandardMaterial3D_hd8ya")
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_ky7b3")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.423209, 0)
+environment = SubResource("Environment_wnrbx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player/Camera3D"]
+stream = ExtResource("3_nth28")
+volume_db = -13.117
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Player/Camera3D"]
+volume_db = 3.748
+autoplay = true
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Player/Camera3D"]
+current = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_a5c48")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.831, 0)
+shape = SubResource("WorldBoundaryShape3D_odyg5")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.9735, -4.28642, 40.2864)
+shape = SubResource("BoxShape3D_20grp")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -300.114, -2.89616, 29.1923)
+shape = SubResource("BoxShape3D_wp4qc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -36.9046, 10.074, 48.0232)
+material_override = ExtResource("3_i5slm")
+mesh = SubResource("PlaneMesh_nten7")
+
+[node name="table_medium4" parent="." instance=ExtResource("4_h2wqj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -6.42703, -11.3401, -124.885)
+
+[node name="chair_A2" parent="." instance=ExtResource("5_18v1q")]
+transform = Transform3D(4.72927, 0, 1.62297, 0, 5, 0, -1.62297, 0, 4.72927, -5.92193, -11.3654, -131.28)
+
+[node name="chair_A3" parent="." instance=ExtResource("5_18v1q")]
+transform = Transform3D(-4.86652, 0, 1.14762, 0, 5, 0, -1.14762, 0, -4.86652, -5.92193, -11.3654, -115.909)
+
+[node name="table_medium6" parent="." instance=ExtResource("4_h2wqj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -559.429, -11.3401, 282.686)
+
+[node name="chair_A6" parent="." instance=ExtResource("5_18v1q")]
+transform = Transform3D(4.92008, 0, -0.890405, 0, 5, 0, 0.890405, 0, 4.92008, -558.924, -11.3654, 276.291)
+
+[node name="chair_A7" parent="." instance=ExtResource("5_18v1q")]
+transform = Transform3D(-4.99882, 0, -0.108899, 0, 5, 0, 0.108899, 0, -4.99882, -558.924, -11.3654, 291.661)
+
+[node name="table_medium7" parent="." instance=ExtResource("4_h2wqj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -550.486, -11.3401, 282.686)
+
+[node name="chair_A8" parent="." instance=ExtResource("5_18v1q")]
+transform = Transform3D(4.85594, 0, -1.19157, 0, 5, 0, 1.19157, 0, 4.85594, -549.981, -11.3654, 276.291)
+
+[node name="chair_A9" parent="." instance=ExtResource("5_18v1q")]
+transform = Transform3D(-4.98864, 0, -0.336941, 0, 5, 0, 0.336941, 0, -4.98864, -549.981, -11.3654, 291.661)
+
+[node name="table_medium8" parent="." instance=ExtResource("4_h2wqj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -541.888, -11.3401, 282.686)
+
+[node name="table_medium9" parent="." instance=ExtResource("4_h2wqj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -448.012, -11.3401, -140.25)
+
+[node name="chair_A10" parent="." instance=ExtResource("5_18v1q")]
+transform = Transform3D(4.72927, 0, 1.62297, 0, 5, 0, -1.62297, 0, 4.72927, -541.382, -11.3654, 276.291)
+
+[node name="chair_A11" parent="." instance=ExtResource("5_18v1q")]
+transform = Transform3D(-4.86652, 0, 1.14762, 0, 5, 0, -1.14762, 0, -4.86652, -541.382, -11.3654, 291.661)
+
+[node name="table_medium5" parent="." instance=ExtResource("4_h2wqj")]
+transform = Transform3D(0.128878, 0, 4.99834, 0, 5, 0, -4.99834, 0, 0.128878, -24.5297, -11.3401, -140.502)
+
+[node name="chair_A4" parent="." instance=ExtResource("5_18v1q")]
+transform = Transform3D(-1.50053, 0, 4.76953, 0, 5, 0, -4.76953, 0, -1.50053, -30.9093, -11.3654, -141.172)
+
+[node name="chair_A5" parent="." instance=ExtResource("5_18v1q")]
+transform = Transform3D(-1.27267, 0, -4.83532, 0, 5, 0, 4.83532, 0, -1.27267, -15.5441, -11.3654, -140.776)
+
+[node name="pictureframe_large_A2" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 88.5193, -5.831, -38.3321)
+
+[node name="pictureframe_large_A3" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 88.5193, -5.831, -24.8835)
+
+[node name="pictureframe_large_A19" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, -567.854, -5.831, 141.518)
+
+[node name="pictureframe_large_A20" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, -567.854, -5.831, 87.7653)
+
+[node name="pictureframe_large_A21" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, -567.854, -5.831, 187.389)
+
+[node name="pictureframe_large_A4" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 34.2498, -5.831, -49.9846)
+
+[node name="pictureframe_large_A5" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 46.8726, -5.831, -49.9846)
+
+[node name="pictureframe_large_A7" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -52.8122, -5.831, -168.118)
+
+[node name="pictureframe_large_A8" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -10.7853, -5.831, -168.118)
+
+[node name="pictureframe_large_A6" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 61.5876, -5.831, -49.9846)
+
+[node name="pictureframe_large_A9" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -428.774, -5.831, 241.45)
+
+[node name="pictureframe_large_A10" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -385.876, -5.831, 241.45)
+
+[node name="pictureframe_large_A11" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -339.945, -5.831, 241.45)
+
+[node name="pictureframe_large_A12" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -287.237, -5.831, 241.45)
+
+[node name="pictureframe_large_A13" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -223.243, -5.831, 241.45)
+
+[node name="pictureframe_large_A25" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -310.731, -5.831, -105.865)
+
+[node name="pictureframe_large_A26" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -267.833, -5.831, -105.865)
+
+[node name="pictureframe_large_A29" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -448.636, -5.831, -105.865)
+
+[node name="pictureframe_large_A30" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -405.737, -5.831, -105.865)
+
+[node name="pictureframe_large_A27" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -221.902, -5.831, -105.865)
+
+[node name="pictureframe_large_A28" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -169.194, -5.831, -105.865)
+
+[node name="pictureframe_large_A22" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -96.6927, -5.831, 240.295)
+
+[node name="pictureframe_large_A23" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -70.0273, -5.831, 240.295)
+
+[node name="pictureframe_large_A24" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -30.9771, -5.831, 240.295)
+
+[node name="pictureframe_large_A14" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -362.217, -5.831, 308.935)
+
+[node name="pictureframe_large_A15" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -319.319, -5.831, 308.935)
+
+[node name="pictureframe_large_A16" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -273.388, -5.831, 308.935)
+
+[node name="pictureframe_large_A17" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -220.68, -5.831, 308.935)
+
+[node name="pictureframe_large_A18" parent="." instance=ExtResource("6_hl7ea")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -156.685, -5.831, 308.935)
+
+[node name="chair_stool_wood2" parent="." instance=ExtResource("7_rhxxd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -443.25, -11.496, -140.043)
+
+[node name="chair_stool_wood3" parent="." instance=ExtResource("7_rhxxd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -453.194, -11.496, -140.043)
+
+[node name="table_medium10" parent="." instance=ExtResource("4_h2wqj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -422.648, -11.3401, -140.25)
+
+[node name="chair_stool_wood4" parent="." instance=ExtResource("7_rhxxd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -417.886, -11.496, -140.043)
+
+[node name="chair_stool_wood5" parent="." instance=ExtResource("7_rhxxd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -427.83, -11.496, -140.043)
+
+[node name="table_medium11" parent="." instance=ExtResource("4_h2wqj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -398.128, -11.3401, -140.25)
+
+[node name="chair_stool_wood6" parent="." instance=ExtResource("7_rhxxd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -393.365, -11.496, -140.043)
+
+[node name="chair_stool_wood7" parent="." instance=ExtResource("7_rhxxd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -403.31, -11.496, -140.043)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -129.875, 6.79166, 0)
+light_indirect_energy = 16.0
+
+[node name="Allshouse" type="Area3D" parent="."]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -80.4223, -5.26427, -151.674)
+script = ExtResource("8_5lq3l")
+message = "Mr. Allshouse: Are you part of AET? No? *angry schwerer noises*"
+
+[node name="Sprite3D" type="Sprite3D" parent="Allshouse"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 3.34476, 0, 0)
+texture = ExtResource("8_ypkae")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Allshouse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7525, 0.115784, 2.43243)
+shape = SubResource("BoxShape3D_dolen")
+
+[node name="Writer" type="Area3D" parent="."]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -66.9198, -5.26427, 250.832)
+script = ExtResource("8_5lq3l")
+message = "Mr. Writer: SREEKESH?! IS THAT YOU?! GET OUT! NOW!"
+
+[node name="Sprite3D" type="Sprite3D" parent="Writer"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 3.34476, 0, 0)
+texture = ExtResource("9_u7pj1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Writer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7525, 0.115784, 2.43243)
+shape = SubResource("BoxShape3D_dolen")
+
+[node name="Crowe" type="Area3D" parent="."]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -422.039, -5.26427, -157.03)
+script = ExtResource("8_5lq3l")
+message = "*Feeling tired, you lean back on a chair.               Dr. Crowe: How many legs are on this chair?"
+
+[node name="Sprite3D" type="Sprite3D" parent="Crowe"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 3.34476, 0, 0)
+texture = ExtResource("10_u7c0v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crowe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7525, 0.115784, 2.43243)
+shape = SubResource("BoxShape3D_dolen")
+
+[node name="Chapin" type="Area3D" parent="."]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -422.039, -5.26427, 269.377)
+script = ExtResource("8_5lq3l")
+message = "Dr. Chapin: Are you doing CS? If not, stop this BS! *Pulls out bricked ThinkPad"
+
+[node name="Sprite3D" type="Sprite3D" parent="Chapin"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 3.34476, 0, 0)
+texture = ExtResource("11_ncg4o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chapin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3606, 0.115784, 2.43243)
+shape = SubResource("BoxShape3D_dolen")
+
+[node name="Canvas" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Action Box" type="Panel" parent="Canvas"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -364.0
+offset_top = -216.0
+offset_right = 364.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Canvas/Action Box"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]Mr. Allshouse: I'm going to [REDACTED] you!
+
+*Pulls out AK-47"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Canvas/Action Box"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 10.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]Enemy Health: 100"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Canvas/Action Box"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 115.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center]Press Space when the reticle reaches green to deal damage! Otherwise, you lose health."
+
+[node name="ColorRect2" type="ColorRect" parent="Canvas/Action Box"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -16.5
+offset_right = 207.0
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.541176, 0.101961, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Canvas/Action Box"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = -16.5
+offset_right = -24.0
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.541176, 0.101961, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Canvas/Action Box"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -16.5
+offset_right = 56.0
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0, 1)
+
+[node name="HSlider" type="HSlider" parent="Canvas/Action Box"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -8.0
+offset_right = 207.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 36.0
+editable = false
+scrollable = false
+
+[node name="Clue Box" type="Panel" parent="Canvas"]
+layout_mode = 1
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 524.0
+offset_bottom = 103.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Canvas/Clue Box"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]4 clue(s) remaining"
+
+[node name="Health Box" type="Panel" parent="Canvas"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = -107.0
+offset_right = 248.0
+offset_bottom = -26.0
+grow_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Canvas/Health Box"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]♥100"
+
+[node name="Powerup Box" type="Panel" parent="Canvas"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -541.0
+offset_top = 20.0
+offset_right = -29.0
+offset_bottom = 101.0
+grow_horizontal = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Canvas/Powerup Box"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]No Power-ups"
+
+[node name="TextureRect" type="TextureRect" parent="Canvas"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("14_03bek")
+
+[node name="TextureRect2" type="TextureRect" parent="Canvas"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -206.0
+offset_top = -124.0
+offset_right = -106.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("15_h2kdf")
+
+[node name="TextureRect3" type="TextureRect" parent="Canvas"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -289.0
+offset_top = -124.0
+offset_right = -189.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("16_xlqsp")
+
+[node name="TextureRect4" type="TextureRect" parent="Canvas"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -206.0
+offset_top = -205.0
+offset_right = -106.0
+offset_bottom = -105.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("17_wybl6")
+
+[node name="Powerup" type="Area3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -124.9, -5.831, 139.608)
+script = ExtResource("14_oawwm")
+
+[node name="Book" parent="Powerup" instance=ExtResource("15_v04le")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Powerup"]
+shape = SubResource("BoxShape3D_iocuc")
+
+[node name="Powerup2" type="Area3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -124.9, -5.831, -118.769)
+script = ExtResource("14_oawwm")
+type = 1
+
+[node name="Book" parent="Powerup2" instance=ExtResource("15_v04le")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Powerup2"]
+shape = SubResource("BoxShape3D_iocuc")
+
+[node name="Powerup3" type="Area3D" parent="."]
+transform = Transform3D(-2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -251.777, -5.831, -77.4512)
+script = ExtResource("14_oawwm")
+type = 2
+
+[node name="Book" parent="Powerup3" instance=ExtResource("15_v04le")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Powerup3"]
+shape = SubResource("BoxShape3D_iocuc")
+
+[node name="Powerup4" type="Area3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -489.677, -5.831, -0.81488)
+script = ExtResource("14_oawwm")
+type = 3
+
+[node name="Book" parent="Powerup4" instance=ExtResource("15_v04le")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Powerup4"]
+shape = SubResource("BoxShape3D_iocuc")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -126.723, -0.347294, -166.823)
+texture = ExtResource("20_1mgcr")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(-1.74846e-07, 0, -4, 0, 4, 0, 4, 0, -1.74846e-07, -109.576, -0.347294, 149.437)
+texture = ExtResource("21_j4tqq")
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -12.2467, -0.347294, 174.853)
+texture = ExtResource("22_wwho4")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -262.193, -0.347294, -134.615)
+texture = ExtResource("23_44buy")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -501.194, -0.347294, 307.261)
+texture = ExtResource("24_kvj0m")
+
+[connection signal="body_entered" from="Allshouse" to="Allshouse" method="_on_body_entered"]
+[connection signal="body_entered" from="Writer" to="Writer" method="_on_body_entered"]
+[connection signal="body_entered" from="Crowe" to="Crowe" method="_on_body_entered"]
+[connection signal="body_entered" from="Chapin" to="Chapin" method="_on_body_entered"]
+[connection signal="body_entered" from="Powerup" to="Powerup" method="_on_body_entered"]
+[connection signal="body_entered" from="Powerup2" to="Powerup2" method="_on_body_entered"]
+[connection signal="body_entered" from="Powerup3" to="Powerup3" method="_on_body_entered"]
+[connection signal="body_entered" from="Powerup4" to="Powerup4" method="_on_body_entered"]

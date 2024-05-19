@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh3j6iq242jdl"]
+
+[ext_resource type="Script" path="res://Scripts/video.gd" id="1_dnfqd"]
+[ext_resource type="VideoStream" path="res://acltheft.ogv" id="1_va8ju"]
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dnfqd")
+time = 33
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_va8ju")
+autoplay = true
+expand = true
